@@ -35,21 +35,6 @@
              (setq-default indent-tabs-mode nil)
              (setq c-basic-indent 4)
              (setq tab-width 4)))
-
-; Gentoo mode
-(defun script-mode ()
-  (shell-script-mode)
-  (sh-set-shell "bash")
-  (make-local-variable 'tab-width)
-  (setq tab-width 4))
-(setq   auto-mode-alist (cons '("\\.ebuild\\'" . script-mode) auto-mode-alist)
-        auto-mode-alist (cons '("\\.eclass\\'" . script-mode) auto-mode-alist))
-; Python Hook
-(add-hook 'python-mode-hook
-          (function (lambda ()
-                      (setq indent-tabs-mode nil
-                            tab-width 4))))
-
 ;; ==========================================================================
 (defun up-slightly () (interactive) (scroll-up 5))	  	
 (defun down-slightly () (interactive) (scroll-down 5))	  	
@@ -69,7 +54,6 @@
 (global-set-key [S-mouse-5] 'up-one)
 (global-set-key [S-mouse-6] 'down-one)	  	
 (global-set-key [S-mouse-7] 'up-one)) 
-
 ;; =============== Advanced buffers control ==================================
 (defun kill-other-buffers ()
     "Kill all other buffers."

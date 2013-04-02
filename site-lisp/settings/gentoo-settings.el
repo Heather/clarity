@@ -1,0 +1,7 @@
+(defun script-mode ()
+  (shell-script-mode)
+  (sh-set-shell "bash")
+  (make-local-variable 'tab-width)
+  (setq tab-width 4))
+(setq 	auto-mode-alist (cons '("\\.ebuild\\'" . script-mode) auto-mode-alist)
+		auto-mode-alist (cons '("\\.eclass\\'" . script-mode) auto-mode-alist))
