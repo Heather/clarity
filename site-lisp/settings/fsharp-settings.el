@@ -1,8 +1,12 @@
 (autoload 'fsharp-mode "fsharp-mode" "Major mode for editing F# code." t)
 (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode))
 
-(setq inferior-fsharp-program "/usr/bin/fsharpi --readline-")
-(setq fsharp-compiler "/usr/bin/fsharpc")
+(setq inferior-fsharp-program
+    (cond ((eq system-type 'gnu/linux) "/usr/bin/fsharpi --readline-")
+          (t "fsharpi.exe")))
+(setq fsharp-compiler
+    (cond ((eq system-type 'gnu/linux) "/usr/bin/fsharpc")
+          (t "fsharpc.exe")))
 
 (add-hook 'fsharp-mode-hook
  (lambda ()
