@@ -32,6 +32,9 @@
 (setq-default c-basic-offset 4)
 (c-set-offset 'substatement-open '+)
 (c-set-offset 'defun-open '+)
+;; Lisp Formatting
+(setq-default lisp-indent-offset 4)
+(setq-default lisp-body-indent 4)
 ;; Custom flags
 (custom-set-variables
  '(case-fold-search nil)                         ;; No idea =='
