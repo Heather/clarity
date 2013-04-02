@@ -1,4 +1,4 @@
-# `~/.emacs.d`.
+# `~/.emacs.d`
 
 ``` scheme
 (defun find-subdirs-containing (dir pattern)
