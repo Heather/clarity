@@ -47,6 +47,9 @@
                           (find-subdirs-containing init-packages-path "\\.el$")
                           (list init-path)
                           initial-load-path)))
+;;  Add Packages to load path
+(add-to-list 'load-path "~/.emacs.d/site-lisp/packages/")
+;; Load Settings
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
     (condition-case e
         (load-file file)
@@ -86,3 +89,10 @@
 
 ;; Applieng Rules
 (Rules)
+
+;; Additional functions
+
+(defun byte-recompile-init-path ()
+  (interactive)
+  (dolist (dir (find-subdirs-containing init-packages-path "\\.el$"))
+    (byte-recompile-directory dir 0)))
