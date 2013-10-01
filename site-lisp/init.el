@@ -4,8 +4,10 @@
 (setq custom-file (expand-file-name "custom.el" init-path))
 (add-to-list 'load-path "~/.emacs.d/site-lisp/modules")
 (when (file-readable-p custom-file) (load-file custom-file))
+
 ;; Modules load
 (autoload 'Rules "Rules" t)
+
 ;; Fonts
 (set-face-attribute 'default nil :height 110) ;; ~11ptr
 (defun fontify-frame (frame) 
@@ -17,12 +19,14 @@
 (push 'fontify-frame after-make-frame-functions)
 (setq font-lock-support-mode 'jit-lock-mode)
 (setq font-lock-maximum-decoration t)
+
 ;; UTF8
 (prefer-coding-system       'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+
 ;; Packages & Settings
 (setq init-packages-path (expand-file-name "packages" init-path))
 (setq 
@@ -47,24 +51,30 @@
                           (find-subdirs-containing init-packages-path "\\.el$")
                           (list init-path)
                           initial-load-path)))
+
 ;;  Add Packages to load path
 (add-to-list 'load-path "~/.emacs.d/site-lisp/packages/")
+
 ;; Load Settings
 (dolist (file (directory-files init-settings-path t "-settings\\.el$"))
     (condition-case e
         (load-file file)
         (error (warn "Error while loading settings file %s: %S" file (cdr e)))))
 (provide 'init)
+
 ;; Add the init-path tree to the load path
 (setq initial-load-path load-path)
 (add-init-path-to-load-path)
+
 ;; C Formatting
 (setq-default c-basic-offset 4)
 (c-set-offset 'substatement-open '+)
 (c-set-offset 'defun-open '+)
+
 ;; Lisp Formatting
 (setq-default lisp-indent-offset 4)
 (setq-default lisp-body-indent 4)
+
 ;; Custom flags
 (custom-set-variables
  '(case-fold-search nil)                         ;; No idea =='
@@ -79,6 +89,7 @@
  '(global-linum-mode 0)                          ;; line numbers
  '(setq-default indent-tabs-mode nil)            ;; emacs, use SPACES!
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
+
 ;; Additional theaming
 (if show-paren-mode (set-face-bold-p 'show-paren-match t))
 ;; Default Frame
@@ -91,7 +102,6 @@
 (Rules)
 
 ;; Additional functions
-
 (defun byte-recompile-init-path ()
   (interactive)
   (dolist (dir (find-subdirs-containing init-packages-path "\\.el$"))
