@@ -85,7 +85,7 @@
 (add-to-list 'default-frame-alist '(left . 70))
 (add-to-list 'default-frame-alist '(top . 60))
 (add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(width . 160))
+(add-to-list 'default-frame-alist '(width . 80))
 
 ;; Applieng Rules
 (Rules)
