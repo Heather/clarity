@@ -60,7 +60,7 @@
 (defun kill-other-buffers ()
     "Kill all other buffers."
     (interactive)
-    (mapc 'kill-buffer 
+    (mapc 'kill-buffer
           (delq (current-buffer) 
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 ;; Ensure ibuffer opens with point at the current buffer's entry.

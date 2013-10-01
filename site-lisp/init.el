@@ -88,6 +88,7 @@
  '(tab-width 4)                                  ;; 4
  '(global-linum-mode 0)                          ;; line numbers
  '(setq-default indent-tabs-mode nil)            ;; emacs, use SPACES!
+ '(setq-default show-trailing-whitespace t)      ;; show whitespaces
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
 
 ;; Additional theaming
