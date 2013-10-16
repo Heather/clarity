@@ -9,6 +9,7 @@
 (put 'autopair-newline 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; Client - Server hack for windows
 (when (eq system-type 'windows-nt) 
     (load "server")
     (unless (server-running-p) (server-start))
