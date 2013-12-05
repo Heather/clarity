@@ -75,6 +75,9 @@
 (setq-default lisp-indent-offset 4)
 (setq-default lisp-body-indent 4)
 
+;;No lines wrap
+(setq-default truncate-lines t)
+
 ;; Custom flags
 (custom-set-variables
  '(case-fold-search nil)                         ;; No idea =='
