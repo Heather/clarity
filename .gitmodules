@@ -1,0 +1,3 @@
+[submodule "site-lisp/packages/racket-mode"]
+	path = site-lisp/packages/racket-mode
+	url = git@github.com:greghendershott/racket-mode.git
