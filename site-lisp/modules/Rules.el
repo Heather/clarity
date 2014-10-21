@@ -14,7 +14,7 @@
 ;; Additional keyworkds
 (global-set-key (kbd "C-q") 'revert-buffer-no-confirm)
 (global-set-key '[f11] 'menu-bar-mode)
-;; =========================================================================
+
 (delete-selection-mode 1)
 ;; No bars
 (defun frame-bg (frame)
@@ -30,14 +30,14 @@
 		(menu-bar-mode -1)))
 (frame-bg (selected-frame))
 (add-hook 'after-make-frame-functions 'frame-bg)
-;; ==========================================================================
+
 ; ALWAYS USE 4 SPACES ! NO TABS
 (add-hook 'after-change-major-mode-hook
           '(lambda ()
              (setq-default indent-tabs-mode nil)
              (setq c-basic-indent 4)
              (setq tab-width 4)))
-;; ==========================================================================
+
 (defun up-slightly () (interactive) (scroll-up 5))
 (defun down-slightly () (interactive) (scroll-down 5))
 (global-set-key [mouse-4] 'down-slightly)
@@ -56,14 +56,14 @@
 (global-set-key [S-mouse-5] 'up-one)
 (global-set-key [S-mouse-6] 'down-one)	
 (global-set-key [S-mouse-7] 'up-one))
-;; =============== Advanced buffers control ==================================
+
 (defun kill-other-buffers ()
     "Kill all other buffers."
     (interactive)
     (mapc 'kill-buffer
           (delq (current-buffer) 
                 (remove-if-not 'buffer-file-name (buffer-list)))))
-;; Ensure ibuffer opens with point at the current buffer's entry.
+
 (defadvice ibuffer
   (around ibuffer-point-to-most-recent) ()
   "Open ibuffer with cursor pointed to most recent buffer name."
@@ -72,5 +72,11 @@
     (ibuffer-jump-to-buffer recent-buffer-name)))
 (ad-activate 'ibuffer)
 (global-set-key (kbd "C-x C-k") 'kill-other-buffers)
+(global-set-key (kbd "C-x C-z") 'kill-buffer) ; x-k
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-;; ==========================================================================
+
+(global-set-key (kbd "C-o") 'find-file)`
+(defadvice find-file-read-args (around find-file-read-args-always-use-dialog-box act)
+  "Simulate invoking menu item as if by the mouse; see `use-dialog-box'."
+  (let ((last-nonmenu-event nil))
+     ad-do-it))
