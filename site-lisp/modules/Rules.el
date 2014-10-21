@@ -13,7 +13,7 @@
 
 ;; Additional keyworkds
 (global-set-key (kbd "C-q") 'revert-buffer-no-confirm)
-(global-set-key [f9] 'menu-bar-mode)
+(global-set-key '[f11] 'menu-bar-mode)
 ;; =========================================================================
 (delete-selection-mode 1)
 ;; No bars
