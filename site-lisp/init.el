@@ -10,8 +10,8 @@
 
 ;; Fonts
 (set-face-attribute 'default nil :height 110) ;; ~11ptr
-(defun fontify-frame (frame) 
-    (cond 
+(defun fontify-frame (frame)
+    (cond
         ((eq system-type 'gnu/linux) (set-frame-parameter frame 'font "Monospace-11"))
         (t (set-frame-parameter frame 'font "Lucida Console"))
     ))
@@ -29,7 +29,7 @@
 
 ;; Packages & Settings
 (setq init-packages-path (expand-file-name "packages" init-path))
-(setq 
+(setq
       init-settings-path (expand-file-name "settings" init-path)
       init-persistence-path (expand-file-name "persistence" init-path))
 (defun find-subdirs-containing (dir pattern)
@@ -67,16 +67,8 @@
 (add-init-path-to-load-path)
 
 ;; C Formatting
-(setq-default c-basic-offset 4)
 (c-set-offset 'substatement-open '+)
 (c-set-offset 'defun-open '+)
-
-;; Lisp Formatting
-(setq-default lisp-indent-offset 4)
-(setq-default lisp-body-indent 4)
-
-;;No lines wrap
-(setq-default truncate-lines t)
 
 ;; Custom flags
 (custom-set-variables
@@ -89,10 +81,18 @@
  '(setq backup-directory-alist t)                ;; .emacs.d backup dir
  '(show-paren-mode t nil (paren))                ;; Default
  '(tab-width 4)                                  ;; 4
+ '(c-basic-offset 4)
+ '(lisp-body-indent 4)
+ '(lisp-indent-offset 4)
  '(global-linum-mode 0)                          ;; line numbers
- '(setq-default indent-tabs-mode nil)            ;; emacs, use SPACES!
- '(setq-default show-trailing-whitespace t)      ;; show whitespaces
+ '(indent-tabs-mode nil)                         ;; emacs, use SPACES!
+ '(show-trailing-whitespace t)                   ;; show whitespaces
+ '(cursor-type 'bar)                             ;; cursor type
+ '(global-hl-line-mode t)
+ '(truncate-lines t)                             ;; No lines wrap
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
+
+(set-face-background hl-line-face "gray97")
 
 ;; Additional theaming
 (if show-paren-mode (set-face-bold-p 'show-paren-match t))

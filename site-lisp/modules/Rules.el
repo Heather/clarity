@@ -43,25 +43,25 @@
 (global-set-key [mouse-4] 'down-slightly)
 (global-set-key [mouse-6] 'down-slightly)
 (global-set-key [mouse-5] 'up-slightly)
-(global-set-key [mouse-7] 'up-slightly)	
+(global-set-key [mouse-7] 'up-slightly)
 ; Scroll up five lines with META held
 (global-set-key [M-mouse-4] 'down-slightly)
 (global-set-key [M-mouse-5] 'up-slightly)
 (global-set-key [M-mouse-6] 'down-slightly)
 (global-set-key [M-mouse-7] 'up-slightly)
 ; Scroll up one line with SHIFT held
-(defun up-one () (interactive) (scroll-up 1))	  	
-(defun down-one () (interactive) (scroll-down 1))	
+(defun up-one () (interactive) (scroll-up 1))
+(defun down-one () (interactive) (scroll-down 1))
 (global-set-key [S-mouse-4] 'down-one)
 (global-set-key [S-mouse-5] 'up-one)
-(global-set-key [S-mouse-6] 'down-one)	
+(global-set-key [S-mouse-6] 'down-one)
 (global-set-key [S-mouse-7] 'up-one))
 
 (defun kill-other-buffers ()
     "Kill all other buffers."
     (interactive)
     (mapc 'kill-buffer
-          (delq (current-buffer) 
+          (delq (current-buffer)
                 (remove-if-not 'buffer-file-name (buffer-list)))))
 
 (defadvice ibuffer
