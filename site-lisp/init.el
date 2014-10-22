@@ -1,9 +1,7 @@
 ;;                            -- Clarity --
 ;; Base init
 (defvar init-path (expand-file-name "~/.emacs.d/site-lisp"))
-(setq custom-file (expand-file-name "custom.el" init-path))
 (add-to-list 'load-path "~/.emacs.d/site-lisp/modules")
-(when (file-readable-p custom-file) (load-file custom-file))
 
 ;; Modules load
 (autoload 'Rules "Rules" t)
