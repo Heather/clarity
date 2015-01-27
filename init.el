@@ -10,7 +10,7 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Client - Server hack for windows
-(when (eq system-type 'windows-nt) 
+(when (eq system-type 'windows-nt)
     (load "server")
     (unless (server-running-p) (server-start))
 
@@ -18,5 +18,5 @@
     (defun hide-form ()
         (interactive)
         (server-edit)
-        (make-frame-invisible nil t)) 
+        (make-frame-invisible nil t))
     (global-set-key (kbd "C-x C-c") 'hide-form))
