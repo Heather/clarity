@@ -86,7 +86,7 @@
  '(indent-tabs-mode nil)                         ;; emacs, use SPACES!
  '(show-trailing-whitespace t)                   ;; show whitespaces
  '(cursor-type 'bar)                             ;; cursor type
- '(global-hl-line-mode t)
+ '(global-hl-line-mode f)
  '(truncate-lines t)                             ;; No lines wrap
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
 
