@@ -68,6 +68,10 @@
 (c-set-offset 'substatement-open '+)
 (c-set-offset 'defun-open '+)
 
+;; PuTTY fix. Ugly. Bad. But it works. (Good)
+(define-key global-map "\M-[1~" 'beginning-of-line)
+(define-key global-map [select] 'end-of-line)
+
 ;; Custom flags
 (custom-set-variables
  '(case-fold-search nil)                         ;; No idea =='
