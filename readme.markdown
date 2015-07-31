@@ -22,7 +22,7 @@
                           initial-load-path)))
 ```
 
-<img align="right" src="https://s-media-cache-ak0.pinimg.com/originals/02/b7/68/02b768567a796815d50585de3c5b1680.jpg">
+![](https://s-media-cache-ak0.pinimg.com/originals/02/b7/68/02b768567a796815d50585de3c5b1680.jpg)
 
 ``` scheme
 (require 'cperl-mode)
