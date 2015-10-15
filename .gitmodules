@@ -1,6 +1,4 @@
 [submodule "site-lisp/packages/idris-mode"]
 	path = site-lisp/packages/idris-mode
 	url = git@github.com:idris-hackers/idris-mode.git
-[submodule "site-lisp/packages/purescript-mode"]
-	path = site-lisp/packages/purescript-mode
-	url = git@github.com:dysinger/purescript-mode.git
+
