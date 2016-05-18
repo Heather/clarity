@@ -2,3 +2,6 @@
 	path = site-lisp/packages/idris-mode
 	url = git@github.com:idris-hackers/idris-mode.git
 
+[submodule "site-lisp/packages/prop-menu"]
+	path = site-lisp/packages/prop-menu
+	url = https://github.com/david-christiansen/prop-menu-el.git
