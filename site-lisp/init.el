@@ -72,28 +72,6 @@
 (define-key global-map "\M-[1~" 'beginning-of-line)
 (define-key global-map [select] 'end-of-line)
 
-;; Custom flags
-(custom-set-variables
- '(case-fold-search nil)                         ;; No idea =='
- '(cua-selection-mode t)                         ;; + cua
- '(cua-mode t nil (cua-base))                    ;; C-c C-v Copy/Paste
- '(current-language-environment "UTF-8")         ;; As I said earlier
- '(inhibit-startup-screen t)                     ;; MUSTHAVE
- '(initial-buffer-choice nil)                    ;; MUSTHAVE
- '(setq backup-directory-alist t)                ;; .emacs.d backup dir
- '(show-paren-mode t nil (paren))                ;; Default
- '(tab-width 4)                                  ;; 4
- '(c-basic-offset 4)
- '(lisp-body-indent 4)
- '(lisp-indent-offset 4)
- '(global-linum-mode 0)                          ;; line numbers
- '(indent-tabs-mode nil)                         ;; emacs, use SPACES!
- '(show-trailing-whitespace t)                   ;; show whitespaces
- '(cursor-type 'bar)                             ;; cursor type
- '(global-hl-line-mode f)
- '(truncate-lines t)                             ;; No lines wrap
- '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
-
 (set-face-background hl-line-face "gray97")
 
 ;; Additional theaming
