@@ -7,16 +7,28 @@
 (autoload 'Rules "Rules" t)
 
 ;; Fonts
-(set-face-attribute 'default nil :height 110) ;; ~11ptr
+(set-face-attribute 'default nil :height 120)
 (defun fontify-frame (frame)
     (cond
-        ((eq system-type 'windows-nt) (set-frame-parameter frame 'font "Lucida Console"))
-        (t (set-frame-parameter frame 'font "Monospace-11"))
+      ((eq system-type 'windows-nt) (set-frame-parameter frame 'font "Lucida Console"))
+      ((eq system-type 'gnu/linux) (set-frame-parameter frame 'font "Dejavu Sans Mono"))
+      (t (set-frame-parameter frame 'font "Monospace-12"))
     ))
 (fontify-frame nil)
 (push 'fontify-frame after-make-frame-functions)
 (setq font-lock-support-mode 'jit-lock-mode)
 (setq font-lock-maximum-decoration t)
+
+;; Pg-Up Pg-Down
+(global-set-key [next]
+  (lambda () (interactive)
+    (condition-case nil (scroll-up)
+      (end-of-buffer (goto-char (point-max))))))
+
+(global-set-key [prior]
+  (lambda () (interactive)
+    (condition-case nil (scroll-down)
+      (beginning-of-buffer (goto-char (point-min))))))
 
 ;; UTF8
 (prefer-coding-system       'utf-8)
