@@ -10,8 +10,8 @@
 (set-face-attribute 'default nil :height 110) ;; ~11ptr
 (defun fontify-frame (frame)
     (cond
-        ((eq system-type 'gnu/linux) (set-frame-parameter frame 'font "Monospace-11"))
-        (t (set-frame-parameter frame 'font "Lucida Console"))
+        ((eq system-type 'windows-nt) (set-frame-parameter frame 'font "Lucida Console"))
+        (t (set-frame-parameter frame 'font "Monospace-11"))
     ))
 (fontify-frame nil)
 (push 'fontify-frame after-make-frame-functions)
