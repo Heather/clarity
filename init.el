@@ -32,7 +32,6 @@
  '(cua-selection-mode t)
  '(current-language-environment "UTF-8")
  '(cursor-type (quote bar))
- '(global-hl-line-mode f)
  '(global-linum-mode 0)
  '(haskell-mode-hook (quote (turn-on-haskell-indentation)))
  '(indent-tabs-mode nil)
