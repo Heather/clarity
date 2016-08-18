@@ -72,7 +72,8 @@
 (define-key global-map "\M-[1~" 'beginning-of-line)
 (define-key global-map [select] 'end-of-line)
 
-(set-face-background hl-line-face "gray97")
+;;!Deprecated since emacs25
+;;(set-face-background hl-line-face "gray97")
 
 ;; Additional theaming
 (if show-paren-mode (set-face-bold-p 'show-paren-match t))
