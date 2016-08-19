@@ -1,10 +1,12 @@
 ;;                            -- Clarity --
+
 ;; Base init
 (defvar init-path (expand-file-name "~/.emacs.d/site-lisp"))
 (add-to-list 'load-path "~/.emacs.d/site-lisp/modules")
 
 ;; Modules load
 (autoload 'Rules "Rules" t)
+(autoload 'Atomic "Atomic" t)
 
 ;; Fonts
 (set-face-attribute 'default nil :height 120)
@@ -95,8 +97,11 @@
 (add-to-list 'default-frame-alist '(height . 40))
 (add-to-list 'default-frame-alist '(width . 100))
 
+(require 'sr-speedbar)
+
 ;; Applieng Rules
 (Rules)
+(Atomic)
 
 ;; Additional functions
 (defun byte-recompile-init-path ()

@@ -1,8 +1,9 @@
 ;;                           -- Clarity --
 (defun Rules ()
-    (setenv "PAGER"     "cat")
-    (setenv "EDITOR"    "emacsclient")
-    (setenv "VISUAL"    "emacsclient")
+
+(setenv "PAGER"     "cat")
+(setenv "EDITOR"    "emacsclient")
+(setenv "VISUAL"    "emacsclient")
 
 ;; Ctrl + F search
 (defun revert-buffer-no-confirm ()
@@ -16,6 +17,7 @@
 (global-set-key '[f11] 'menu-bar-mode)
 
 (delete-selection-mode 1)
+
 ;; No bars
 (defun frame-bg (frame)
   "Custom behaviours for new frames."
@@ -31,12 +33,12 @@
 (frame-bg (selected-frame))
 (add-hook 'after-make-frame-functions 'frame-bg)
 
-; ALWAYS USE 4 SPACES ! NO TABS
+; ALWAYS USE 2 SPACES ! NO TABS
 (add-hook 'after-change-major-mode-hook
           '(lambda ()
              (setq-default indent-tabs-mode nil)
-             (setq c-basic-indent 4)
-             (setq tab-width 4)))
+             (setq c-basic-indent 2)
+             (setq tab-width 2)))
 
 (defun up-slightly () (interactive) (scroll-up 5))
 (defun down-slightly () (interactive) (scroll-down 5))
@@ -44,18 +46,20 @@
 (global-set-key [mouse-6] 'down-slightly)
 (global-set-key [mouse-5] 'up-slightly)
 (global-set-key [mouse-7] 'up-slightly)
+
 ; Scroll up five lines with META held
 (global-set-key [M-mouse-4] 'down-slightly)
 (global-set-key [M-mouse-5] 'up-slightly)
 (global-set-key [M-mouse-6] 'down-slightly)
 (global-set-key [M-mouse-7] 'up-slightly)
+
 ; Scroll up one line with SHIFT held
 (defun up-one () (interactive) (scroll-up 1))
 (defun down-one () (interactive) (scroll-down 1))
 (global-set-key [S-mouse-4] 'down-one)
 (global-set-key [S-mouse-5] 'up-one)
 (global-set-key [S-mouse-6] 'down-one)
-(global-set-key [S-mouse-7] 'up-one))
+(global-set-key [S-mouse-7] 'up-one)
 
 (defun kill-other-buffers ()
     "Kill all other buffers."
@@ -75,8 +79,8 @@
 (global-set-key (kbd "C-x C-z") 'kill-buffer) ; x-k
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(global-set-key (kbd "C-o") 'find-file)`
+(global-set-key (kbd "C-o") 'find-file)
 (defadvice find-file-read-args (around find-file-read-args-always-use-dialog-box act)
   "Simulate invoking menu item as if by the mouse; see `use-dialog-box'."
   (let ((last-nonmenu-event nil))
-     ad-do-it))
+     ad-do-it)))
