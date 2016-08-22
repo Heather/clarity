@@ -5,7 +5,7 @@
 (autoload 'prop-menu "prop-menu.el" "Popup menus" t)
 (autoload 'idris-mode "idris-mode.el"
    "Major mode for editing idris programs." t)
- (setq auto-mode-alist (cons '("\\.idr$" . 'idris-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.idr$" . 'idris-mode) auto-mode-alist))
 
 (require 'prop-menu)
 (require 'idris-mode)
