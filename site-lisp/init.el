@@ -4,6 +4,9 @@
 (defvar init-path (expand-file-name "~/.emacs.d/site-lisp"))
 (add-to-list 'load-path "~/.emacs.d/site-lisp/modules")
 
+;; FreeBSD correction for C-h
+(global-set-key [(control ?h)] 'delete-backward-char)
+
 ;; Modules load
 (autoload 'Rules "Rules" t)
 (autoload 'Atomic "Atomic" t)

@@ -1,7 +1,6 @@
 ;      -- CLARITY --
 ; yet another emacs config
 
-;; Load all the stuff
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -21,7 +20,7 @@
     (load "server")
     (unless (server-running-p) (server-start))
 
-    ;; Hiding the form instead of closing it.
+    ;; Hiding the form instead of closing it
     (defun hide-form ()
         (interactive)
         (server-edit)
