@@ -23,12 +23,12 @@
   "Custom behaviours for new frames."
   (with-selected-frame frame
     	(when (display-graphic-p)
-		  (tool-bar-mode -1)
 		  (scroll-bar-mode t)
 		  (mouse-wheel-mode t)
 		  (set-cursor-color "#002060")
 		  (global-set-key (kbd "<C-mouse-4>") 'text-scale-decrease)
-		  (global-set-key (kbd "<C-mouse-5>") 'text-scale-increase))
+        (global-set-key (kbd "<C-mouse-5>") 'text-scale-increase))
+    (tool-bar-mode -1)
 		(menu-bar-mode -1)))
 (frame-bg (selected-frame))
 (add-hook 'after-make-frame-functions 'frame-bg)
