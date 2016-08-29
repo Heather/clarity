@@ -1,13 +1,15 @@
 ;      -- CLARITY --
 ; yet another emacs config
 
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; Melpa
+;(add-to-list 'package-archives
+;             '("melpa" . "https://melpa.org/packages/"))
+;(when (< emacs-major-version 24)
+;; For important compatibility libraries like cl-lib
+;  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+;; Deep Customization
 (setq init-path (expand-file-name "~/.emacs.d/site-lisp"))
 (load-file (expand-file-name "init.el" init-path))
 
